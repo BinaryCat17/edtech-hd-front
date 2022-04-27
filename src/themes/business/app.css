@@ -1,0 +1,23 @@
+.navbar-light .nav-item.active .nav-link,
+.navbar-light .nav-item .nav-link:active,
+.navbar-light .nav-item .nav-link:focus,
+.navbar-light .nav-item:hover .nav-link {
+    color: red 
+}
+
+.custom-background {
+    background-color: #3A98Eb
+}
+
+.custom-background-light {
+    background-color: #B4DBFF
+}
+
+.custom-login-container {
+    border-radius: 25px;
+    background-color: white;
+}
+
+.custom-input {
+    border-color:black
+}
