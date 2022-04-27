@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, CardImg, Row, Col, CardText, CardSubtitle, CardTitle, CardBody } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import PersonCard from "./PersonCard";
 
 const Home = ({ persons, leaders }) => {
@@ -7,19 +7,19 @@ const Home = ({ persons, leaders }) => {
     const menu = leaders.map((leader) => {
         const person = persons.find((person) => person.id === leader.personId)
         return (
-            <div key={leader.id} className="mb-3">
-                <div className="d-flex flex-row col-2 p-0">
-                    <Container className="p-0 mr-2"><PersonCard person={person} /></Container>
-                    <Container className="col-12 p-0">
-                        <Container className="border rounded mb-2">
-                            <h6>Заслуги перед партией</h6>
+            <div key={leader.id} className="mb-3 ml-5">
+                <Row className="col-md-6 col-lg-4 col-xl-3 col-sm-6 col-xs-7 p-0">
+                    <Col className="p-0 mr-2 mb-0"><PersonCard person={person} /></Col>
+                    <Col className="p-0 border rounded" style={{marginTop:"-1px"}}>
+                        <Container className="mb-2">
+                            <h5>Заслуги перед партией</h5>
                             {leader.achievement}
                         </Container>
-                        <Container className="border rounded">
-                            <h6>Сильные стороны</h6>
+                        <Container>
+                            <h5>Сильные стороны</h5>
                         </Container>
-                    </Container>
-                </div>
+                    </Col>
+                </Row>
             </div>
         );
     });
