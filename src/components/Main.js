@@ -29,6 +29,7 @@ const Main = ({persons, leaders, comments}) => {
                     <Route path="/menu/:personId" element={<SelectPerson />} />
                     <Route exact path="/login" element={<Login />} />
                     <Route path="" element={<Navigate to="/home" />} />
+                    <Route from="*" to="/"/>
                 </Routes>
             </Container>
             <Container fluid className="p-0 mt-3">
