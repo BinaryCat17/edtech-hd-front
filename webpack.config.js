@@ -23,7 +23,8 @@ const config = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'public/assets', to: 'assets' }
+        { from: 'public/assets', to: 'assets' },
+        { from: '_redirects', to: '' }
       ]
     })
 
