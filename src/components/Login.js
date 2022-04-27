@@ -10,7 +10,7 @@ class Login extends React.Component {
     render() {
         return (
             <Container className="custom-background">
-                <Container className="p-5">
+                <Container className="py-5 px-md-5">
                     <Container className="m-5"/>
                     <Container className="col-xxl-4 col-xl-5 col-lg-6 col-md-8 p-5 custom-login-container">
                         <Container className="d-flex justify-content-center">
