@@ -1,15 +1,8 @@
-# 🚀 Welcome to your new awesome project!
-
-This project has been created using **webpack-cli**, you can now run
-
+Запуск локального сервера
 ```
-npm run build
+npm run serve
 ```
-
-or
-
+Начальная конфигурация проекта
 ```
-yarn build
+webpack
 ```
-
-to bundle your application
