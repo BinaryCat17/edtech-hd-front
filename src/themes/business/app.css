@@ -1,23 +1,89 @@
-.navbar-light .nav-item.active .nav-link,
-.navbar-light .nav-item .nav-link:active,
-.navbar-light .nav-item .nav-link:focus,
-.navbar-light .nav-item:hover .nav-link {
-    color: red 
+.navbar-light .nav-link:hover i,
+.navbar-light .nav-link.active i {
+    color: #F1B24A
 }
 
-.custom-background {
-    background-color: #3A98Eb
+.navbar-light .navbar-nav .nav-link {
+    color: white;
 }
 
-.custom-background-light {
-    background-color: #B4DBFF
+.main-background {
+    background-image: linear-gradient(to right, #164A41, #9DC88D);
+}
+
+.background {
+    background-color: #2B3E30
+}
+
+.background-border {
+    border: 2px dotted #2B3E30
+}
+
+.background-light {
+    background-color: #164A41
+}
+
+.highlight {
+    background-color: #445F4F
+}
+
+.highlight-light {
+    background-color: #164A41
+}
+
+.foreground {
+    background-color: #35574C
+}
+
+.foreground-light {
+    background-color: #6FB3B8
 }
 
 .custom-login-container {
     border-radius: 25px;
-    background-color: white;
 }
 
-.custom-input {
-    border-color:black
+.btn {
+    color: white;
+    border-color: #CED4DA;
+}
+
+p {
+    color: white;
+}
+
+h1 {
+    color: white
+}
+
+h2 {
+    color: white
+}
+
+h3 {
+    color: white
+}
+
+h4 {
+    color: white
+}
+
+h5 {
+    color: white
+}
+
+h6 {
+    color: white
+}
+
+i {
+    color: white
+}
+
+body {
+    color: white
+}
+
+.footer-corner {
+    border-top-left-radius: 50px;
 }

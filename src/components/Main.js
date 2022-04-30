@@ -18,7 +18,7 @@ const Main = ({persons, leaders, comments}) => {
     }
 
     return (
-        <Container fluid className="p-0 d-flex flex-column min-vh-100">
+        <Container fluid className="p-0 d-flex flex-column min-vh-100 main-background">
             <Header />
             <div style={{ minHeight: 60 }}></div>
             <Container className="mt-3 mb-auto">

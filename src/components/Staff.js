@@ -16,10 +16,6 @@ const Staff = ({ persons }) => {
     return (
         <Container>
             <Row>
-                <Breadcrumb>
-                    <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                    <BreadcrumbItem active>Menu</BreadcrumbItem>
-                </Breadcrumb>
                 <Container className="col-12">
                     <h3>Menu</h3>
                     <hr />

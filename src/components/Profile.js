@@ -3,28 +3,12 @@ import React from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle, Row, Col, Button, Container, CardFooter } from 'reactstrap'
 import PersonCard from "./PersonCard";
 
-function RenderDish({ dish, closeCallback = () => { }, buyCallback = () => { } }) {
-    return (
-        <Card>
-            <CardImg top src={dish.image} alt={dish.name} />
-            <CardBody>
-                <CardTitle tag="h4">{dish.name} </CardTitle>
-                <CardText>{dish.description}</CardText>
-            </CardBody>
-            <CardFooter className="d-flex">
-                <Button className="mr-auto" onClick={buyCallback}>Нанять</Button>
-                <Button close className="align-self-center" onClick={closeCallback}></Button>
-            </CardFooter>
-        </Card>
-    );
-}
-
 function RenderComments({ personId, comments }) {
     const c = comments.filter((comment) => comment.personId === personId);
     const commentList = c.map((comment) => {
         const date = new Date(comment.date);
         return (
-            <Card className="my-1" outline key={comment.id}>
+            <Card className="my-1 background" outline key={comment.id}>
                 <CardBody>
                     {comment.comment}
                 </CardBody>
@@ -36,7 +20,7 @@ function RenderComments({ personId, comments }) {
     });
 
     return (
-        <Container className="border px-2" style={{ "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0, "overflow": "auto" }}>
+        <Container className="background-border rounded px-2" style={{ "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0, "overflow": "auto" }}>
             <Container className="p-0">
                 {commentList}
             </Container>

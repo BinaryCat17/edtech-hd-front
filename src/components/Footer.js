@@ -3,9 +3,9 @@ import { Container, List, Row, Col} from 'reactstrap'
 
 const Footer = ({ }) => {
     return (
-        <Container fluid className='footer border pt-2 bg-light'>
-            <Row className="justify-content-center ">
-                <Col className="col-3 col-sm-2 col-xs-1 col-md-3 col-lg-4 text-center">
+        <div fluid className='footer pt-2 background footer-corner ml-auto' style={{width:"80%"}}>
+            <Row className="justify-content-center">
+                <Col className="col-3 col-sm-2 col-xs-1 col-md-3 col-lg-2">
                     <h5>Links</h5>
                     <List type="unstyled">
                         <li><a href="#"><h6>Home</h6></a></li>
@@ -32,12 +32,12 @@ const Footer = ({ }) => {
                         <a className="btn btn-social-icon" href="mailto:"><i className="fa fa-envelope-o"></i></a>
                 </Col>
             </Row>
-            <Row className='justify-content-center'>
+            <Row className='justify-content-center background ml-2'>
                 <Col className='col-auto'>
                     <p>Copyright USSR Reborn 2022 </p>
                 </Col>
             </Row>
-        </Container>
+        </div>
     );
 }
 
