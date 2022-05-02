@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
+    "@reduxjs/toolkit": "^1.8.1",
     "bootstrap": "^4.6.1",
-    "bootstrap-social": "^5.1.1",
-    "font-awesome": "^4.7.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
     "react-popper": "^2.2.5",
+    "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
-    "reactstrap": "^9.0.2"
+    "reactstrap": "^9.0.2",
+    "redux": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",

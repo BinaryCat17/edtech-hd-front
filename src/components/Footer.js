@@ -3,7 +3,7 @@ import { Container, List, Row, Col} from 'reactstrap'
 
 const Footer = ({ }) => {
     return (
-        <div fluid className='footer pt-2 background footer-corner ml-auto' style={{width:"80%"}}>
+        <div className='footer pt-2 background footer-corner' style={{width:"80%"}}>
             <Row className="justify-content-center">
                 <Col className="col-3 col-sm-2 col-xs-1 col-md-3 col-lg-2">
                     <h5>Links</h5>

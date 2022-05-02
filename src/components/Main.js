@@ -18,10 +18,10 @@ const Main = ({persons, leaders, comments}) => {
     }
 
     return (
-        <Container fluid className="p-0 d-flex flex-column min-vh-100 main-background">
+        <div className="p-0 d-flex flex-column min-vh-100 main-background">
             <Header />
             <div style={{ minHeight: 60 }}></div>
-            <Container className="mt-3 mb-auto">
+            <Container className="mt-4 mb-auto">
                 <Routes>
                     <Route exact path="/home" element={<Home persons={persons} leaders={leaders} />} />
                     <Route exact path="/contact" element={<Contact />} />
@@ -35,7 +35,7 @@ const Main = ({persons, leaders, comments}) => {
             <Container fluid className="p-0 mt-3">
                 <Footer />
             </Container>
-        </Container>
+        </div>
     );
 }
 

@@ -65,6 +65,7 @@ module.exports = () => {
   } else {
     config.mode = "development";
   }
+  config.devtool = 'eval-source-map',
   config.output.publicPath = "/";
   config.devServer.historyApiFallback = true;
   return config;

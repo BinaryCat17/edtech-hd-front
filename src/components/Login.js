@@ -1,6 +1,5 @@
 import React from "react"
 import { Container, Form } from "reactstrap"
-import { FaGoogle, FaSlack, FaTelegram, FaPeopleArrows } from "react-icons/fa"
 import InputField from "./InputField"
 import { AlButton, AlRow } from "./Aligned"
 
@@ -70,11 +69,11 @@ class Login extends React.Component {
                 <Container className="d-flex justify-content-center mb-3">
                     <Container className="highlight rounded-circle col-3 p-0" style={{ position: "absolute", top: -50 }}>
                         <Container>
-                            <Container className="pt-4"></Container>
+                            <Container className="pt-2"></Container>
                             <div className="text-center">
-                                <FaPeopleArrows size="50" />
+                                <img src="/assets/logo/brend.png" width="80" height="80" />
                             </div>
-                            <Container className="pb-4"></Container>
+                            <Container className="pb-2"></Container>
                         </Container>
                     </Container>
                 </Container>
@@ -82,7 +81,7 @@ class Login extends React.Component {
         }
 
         return (
-            <Container className="py-5 px-md-5">
+            <Container className="pb-5 px-md-5">
                 <Container className="m-5" />
                 <Container className="col-xxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 p-5 background custom-login-container">
                     <Logo />
@@ -126,9 +125,9 @@ class Login extends React.Component {
 
                     <p className="mb-1">Или войти с помощью:</p>
                     <AlRow>
-                        <AlButton><FaGoogle size="23" /></AlButton>
-                        <AlButton><FaSlack size="23" /></AlButton>
-                        <AlButton><FaTelegram size="23" /></AlButton>
+                        <AlButton><img src="/assets/logo/google.png" width="25" height="25" /></AlButton>
+                        <AlButton><img src="/assets/logo/slack.png" width="25" height="25" /></AlButton>
+                        <AlButton><img src="/assets/logo/telegram.png" width="25" height="25" /></AlButton>
                     </AlRow>
 
                 </Container>
