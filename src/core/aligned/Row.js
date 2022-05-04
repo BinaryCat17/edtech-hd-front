@@ -1,7 +1,7 @@
 import React from "react"
-import { Row, Col, Button } from "reactstrap"
+import { Row, Col} from "reactstrap"
 
-export const AlRow = ({ children, parts = "0", className }) => {
+export default function AlRow({ children, parts = "0", className }) {
     let elems = React.Children.map(children, child => (
         <Col className="pr-0">
             {React.cloneElement(child, { className: "m-0 p-0" })}
@@ -22,16 +22,3 @@ export const AlRow = ({ children, parts = "0", className }) => {
 
     return (<Row className={"mr-0 " + className}>{elems}</Row>);
 }
-
-export const AlButton = ({ children, type, outline = true }) => (
-    <Button type={type} outline={outline} className="btn-block py-2 m-0 d-flex justify-content-center">
-        {children}
-    </Button>
-)
-
-export const AlSized = ({ size = "6", children, className = "" }) => (
-    (<div className={"m-0 h" + size + " " + className}>
-        {children}
-    </div>)
-)
-

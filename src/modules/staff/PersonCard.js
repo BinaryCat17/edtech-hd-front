@@ -1,14 +1,13 @@
 import React from "react";
-import { Card, CardTitle, Button, Breadcrumb, BreadcrumbItem } from "reactstrap";
+import { Card, CardTitle, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const PersonCard = ({ person }) => {
-    console.log(person.image)
+export default function PersonCard({ person }) {
     return (
         <Card className="foreground">
             <img src={person.image} alt={person.name} />
             <CardTitle tag="h2" className="text-center m-0"></CardTitle>
-            <Link to={`/menu/${person.id}`}>
+            <Link to={`/staff/${person.id}`}>
                 <Button className="text-black btn-block foreground" style={{ border: "none" }}>
                     <h4>{person.name}</h4>
                 </Button>
@@ -16,5 +15,3 @@ const PersonCard = ({ person }) => {
         </Card>
     );
 }
-
-export default PersonCard;

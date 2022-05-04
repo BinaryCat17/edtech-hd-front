@@ -3,7 +3,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -24,12 +23,11 @@ const config = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'public/assets', to: 'assets' },
+        { from: 'dist/service-worker*', to: '../public' },
+        { from: 'dist/workbox*', to: '../public' },
         { from: '_redirects', to: '' }
       ]
     })
-
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   module: {
     rules: [
@@ -66,7 +64,13 @@ module.exports = () => {
     config.mode = "development";
   }
   config.devtool = 'eval-source-map',
-  config.output.publicPath = "/";
+    config.output.publicPath = "/";
   config.devServer.historyApiFallback = true;
+  config.resolve = {
+    alias: {
+      modules: path.resolve(__dirname, 'src/modules'),
+      core: path.resolve(__dirname, 'src/core'),
+    }
+  };
   return config;
 };

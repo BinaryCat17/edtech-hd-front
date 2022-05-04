@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, NavbarBrand, Nav, NavbarToggler, Container, Row, Col, NavItem, Collapse } from "reactstrap"
+import { Navbar, NavbarBrand, Nav, NavbarToggler, Container, NavItem, Collapse } from "reactstrap"
 import { NavLink } from 'react-router-dom'
 
 const BarItem = (props) => {
@@ -44,12 +44,12 @@ class Navigation extends React.Component {
     }
 }
 
-const Header = () => {
+export default function HeaderBar() {
     return (
         <Container fluid className="col-12 fixed-top navbar-light main-background">
             <div className="d-flex p-0">
                 <Navigation brand={<img className="mt-2 mb-0 pb-0" src="/assets/logo/brend.png" width="70" height="70" />}>
-                    <BarItem to="/menu">
+                    <BarItem to="/staff">
                         <img src="/assets/logo/staff.png" width="50" height="50" />
                         <i> Сотрудники</i>
                     </BarItem>
@@ -73,5 +73,3 @@ const Header = () => {
         </Container>
     );
 }
-
-export default Header;

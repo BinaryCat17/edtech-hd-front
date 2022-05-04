@@ -1,9 +1,10 @@
 import React from "react"
 import { Container, Form } from "reactstrap"
-import InputField from "./InputField"
-import { AlButton, AlRow } from "./Aligned"
+import InputField from "core/input/Field"
+import AlButton from "core/aligned/Button"
+import AlRow from "core/aligned/Row"
 
-class Login extends React.Component {
+class LoginPage extends React.Component {
     constructor(props) {
         super(props)
         this.checkUsername = this.checkUsername.bind(this);
@@ -136,4 +137,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default LoginPage;

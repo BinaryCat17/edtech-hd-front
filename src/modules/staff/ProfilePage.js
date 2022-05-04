@@ -1,7 +1,10 @@
-import { start } from "@popperjs/core";
 import React from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle, Row, Col, Button, Container, CardFooter } from 'reactstrap'
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { Card, CardBody, Row, Col, Container, CardFooter } from 'reactstrap'
+import { selectPersonComments } from "./commentsSlice";
 import PersonCard from "./PersonCard";
+import { selectPerson } from "./personsSlice";
 
 function RenderComments({ personId, comments }) {
     const c = comments.filter((comment) => comment.personId === personId);
@@ -28,7 +31,13 @@ function RenderComments({ personId, comments }) {
     );
 }
 
-const Profile = ({ person, comments }) => {
+export default function ProfilePage() {
+    const params = useParams();
+
+    const personId = params.personId;
+    const person = useSelector(selectPerson(personId));
+    const comments = useSelector(selectPersonComments(personId));
+
     let stars = [];
     for (let index = 0; index < person.socialRating; index++) {
         stars.push(<i key={index} className="fa fa-star" aria-hidden="true" style={{ color: "red" }}></i>)
@@ -60,5 +69,3 @@ const Profile = ({ person, comments }) => {
         </Container>
     );
 }
-
-export default Profile;

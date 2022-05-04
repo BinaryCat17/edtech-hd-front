@@ -1,7 +1,7 @@
 import React from "react"
 import { Container } from "reactstrap";
 
-const Contact = (props) => {
+export default function ContactPage() {
     return (
         <Container>
             <div className="row row-content">
@@ -33,5 +33,3 @@ const Contact = (props) => {
         </Container>
     );
 }
-
-export default Contact;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, List, Row, Col} from 'reactstrap'
+import { List, Row, Col} from 'reactstrap'
 
-const Footer = ({ }) => {
+export default function FooterBar() {
     return (
         <div className='footer pt-2 background footer-corner' style={{width:"80%"}}>
             <Row className="justify-content-center">
@@ -40,5 +40,3 @@ const Footer = ({ }) => {
         </div>
     );
 }
-
-export default Footer;
