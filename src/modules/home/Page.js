@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
-import { selectAllPersons, selectPerson } from "../staff/personsSlice";
+import { selectAllPersons } from "../staff/personsSlice";
 import PersonCard from "../staff/PersonCard";
 
 export default function HomePage() {

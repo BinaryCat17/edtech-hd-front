@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import store from "./store"
 
 export default function Main() {
+
     return (
         <Provider store={store}>
             <BrowserRouter>

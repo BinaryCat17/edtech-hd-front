@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = [
-     {
+    {
         id: 0,
         personId: 0,
         rating: 5,
@@ -166,7 +166,7 @@ const initialState = [
 const reducers = {
     commentAdded(state, action) {
         state.push(action.payload)
-    }
+    },
 }
 
 const commentsSlice = createSlice({
@@ -174,6 +174,21 @@ const commentsSlice = createSlice({
     initialState,
     reducers
 })
+
+export const fetchComments = from => dispatch => {
+    console.log(from)
+    return fetch(from,).then(response => response.text()).then(text => {
+        const comment = {
+            id: 33,
+            personId: 0,
+            rating: 2,
+            comment: text,
+            author: "25 Cent",
+            date: "2011-12-02T17:57:28.556094Z"
+        }
+        dispatch(commentAdded(comment));
+    });
+}
 
 export const selectPersonComments = personId => state => (
     state.comments.filter((comment) => comment.personId == personId)

@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Card, CardBody, Row, Col, Container, CardFooter } from 'reactstrap'
 import { selectPersonComments } from "./commentsSlice";
