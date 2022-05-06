@@ -20,14 +20,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: "index.html",
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'public/assets', to: 'assets' },
-        { from: 'dist/service-worker*', to: '../public' },
-        { from: 'dist/workbox*', to: '../public' },
-        { from: '_redirects', to: '' }
-      ]
-    })
+
   ],
   module: {
     rules: [
@@ -54,15 +47,26 @@ const config = {
     ],
   },
 };
-
 module.exports = () => {
+  patterns = [
+    { from: 'public/assets', to: 'assets' },
+    { from: '_redirects', to: '' }
+  ]
+
   if (isProduction) {
     config.mode = "production";
 
     config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
   } else {
     config.mode = "development";
+    patterns.push({ from: 'dist/service-worker*', to: '../public' })
+    patterns.push({ from: 'dist/workbox*', to: '../public'})
   }
+
+  config.plugins.push(new CopyWebpackPlugin({
+    patterns
+  }))
+
   config.devtool = 'eval-source-map',
     config.output.publicPath = "/";
   config.devServer.historyApiFallback = true;
