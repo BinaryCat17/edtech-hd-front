@@ -5,6 +5,7 @@ npm run serve
 ```
 Начальная конфигурация проекта
 ```
+npm run build
 webpack
 ```
 

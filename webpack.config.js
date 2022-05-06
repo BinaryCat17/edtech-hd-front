@@ -68,6 +68,12 @@ module.exports = () => {
     patterns
   }))
 
+  config.watchOptions = {
+    ignored: new RegExp("public|node_modules")
+  }
+
+  config.externals = ["node_modules"]
+
   config.devtool = 'eval-source-map',
     config.output.publicPath = "/";
   config.devServer.historyApiFallback = true;
