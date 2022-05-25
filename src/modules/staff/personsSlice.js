@@ -65,6 +65,20 @@ const personsSlice = createSlice({
     reducers
 })
 
+export const fetchPersons = dispatch => {
+    return fetch(from).then(response => response.text()).then(text => {
+        const comment = {
+            id: 33,
+            personId: 0,
+            rating: 2,
+            comment: text,
+            author: "25 Cent",
+            date: "2011-12-02T17:57:28.556094Z"
+        }
+        dispatch(commentAdded(comment));
+    });
+}
+
 export const selectAllPersons = state => (
     state.persons
 )
@@ -72,6 +86,7 @@ export const selectAllPersons = state => (
 export const selectPerson = personId => state => (
     state.persons.find((person) => person.id == personId)
 )
+
 
 export const { personAdded } = personsSlice.actions;
 export default personsSlice.reducer;

@@ -177,7 +177,7 @@ const commentsSlice = createSlice({
 
 export const fetchComments = from => dispatch => {
     console.log(from)
-    return fetch(from,).then(response => response.text()).then(text => {
+    return fetch(from).then(response => response.text()).then(text => {
         const comment = {
             id: 33,
             personId: 0,

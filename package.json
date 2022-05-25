@@ -12,6 +12,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.5",
     "@reduxjs/toolkit": "^1.8.1",
+    "base-64": "^1.0.0",
     "bootstrap": "^4.6.1",
     "ejs": ">=3.1.7",
     "glob-parent": ">=5.1.2",
@@ -35,6 +36,7 @@
     "ejs": ">=3.1.7",
     "glob-parent": ">=5.1.2",
     "html-webpack-plugin": "^5.5.0",
+    "http-proxy-middleware": "^2.0.6",
     "prettier": "^2.6.2",
     "style-loader": "^3.3.1",
     "webpack": "^5.72.0",

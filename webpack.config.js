@@ -4,6 +4,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin")
+const { createProxyMiddleware } = require("http-proxy-middleware")
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -15,7 +16,15 @@ const config = {
   },
   devServer: {
     open: true,
-    host: "localhost",
+    host: "192.168.88.250",
+    port: 8081,
+    onAfterSetupMiddleware: function (devServer) {
+      devServer.app.use("/api",
+        createProxyMiddleware({
+          target: "http://192.168.88.250:8082",
+          changeOrigin: true
+        }))
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -48,7 +57,7 @@ const config = {
     ],
   },
 };
-module.exports = () => {
+module.exports = _ => {
   patterns = [
     { from: 'public/assets', to: 'assets' },
     { from: '_redirects', to: '' }
@@ -61,7 +70,7 @@ module.exports = () => {
   } else {
     config.mode = "development";
     patterns.push({ from: 'dist/service-worker*', to: '../public' })
-    patterns.push({ from: 'dist/workbox*', to: '../public'})
+    patterns.push({ from: 'dist/workbox*', to: '../public' })
   }
 
   config.plugins.push(new CopyWebpackPlugin({
@@ -76,11 +85,13 @@ module.exports = () => {
 
   config.devtool = 'eval-source-map',
     config.output.publicPath = "/";
+  config.devServer.allowedHosts = ['xn--h1abejo5bro1bp.xn--p1ai'];
   config.devServer.historyApiFallback = true;
   config.resolve = {
     alias: {
       modules: path.resolve(__dirname, 'src/modules'),
       core: path.resolve(__dirname, 'src/core'),
+      lib: path.resolve(__dirname, 'src/lib'),
     }
   };
   return config;

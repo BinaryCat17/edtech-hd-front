@@ -1,10 +1,10 @@
 import React from "react"
 import { Row, Col} from "reactstrap"
 
-export default function AlRow({ children, parts = "0", className }) {
+export default function AlRow({ children, parts = "0", className, childClass }) {
     let elems = React.Children.map(children, child => (
         <Col className="pr-0">
-            {React.cloneElement(child, { className: "m-0 p-0" })}
+            {React.cloneElement(child, { className: "m-0 p-0 " + childClass })}
         </Col>
     ));
     parts = parseInt(parts, 10);

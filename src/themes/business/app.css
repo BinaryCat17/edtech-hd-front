@@ -1,89 +1,116 @@
-.navbar-light .nav-link:hover i,
-.navbar-light .nav-link.active i {
-    color: #F1B24A
+.login-background {
+    background-image: url(/public/assets/images/LoginBackground.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: white;
+.login-stand {
+    height: 100vh;
+    background: linear-gradient(180deg, #FAFAFA 4.23%, rgba(250, 250, 250, 0) 40.75%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
 }
 
-.main-background {
-    background-image: linear-gradient(to right, #164A41, #9DC88D);
+.login-box {
+    background: #FAFAFA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
-.background {
-    background-color: #2B3E30
+.login-button {
+    background: #4F46E5;
+    border-radius: 5px;
+    appearance: none;
+    border: 0;
 }
 
-.background-border {
-    border: 2px dotted #2B3E30
+.login-button:hover {
+    background: #1d49aa;
 }
 
-.background-light {
-    background-color: #164A41
+.login-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
 }
 
-.highlight {
-    background-color: #445F4F
+.input-field {
+    padding: 0px;
+    margin: 0px;
 }
 
-.highlight-light {
-    background-color: #164A41
+.text-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #111827;
 }
 
-.foreground {
-    background-color: #35574C
+.text-normal {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #4B5563;
 }
 
-.foreground-light {
-    background-color: #6FB3B8
+.text-bold {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
 }
 
-.custom-login-container {
-    border-radius: 25px;
+.text-normal-light {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+
 }
 
-.btn {
-    color: white;
-    border-color: #CED4DA;
+.link-normal {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #4F46E5;
 }
 
-p {
-    color: white;
+.team-list-background {
+    background: #fcfcfc;
 }
 
-h1 {
-    color: white
+.team-list-member {
+    background: white;
 }
 
-h2 {
-    color: white
+.team-list-image {
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-h3 {
-    color: white
+.team-share-button {
+    background: #e0f2fe;
+    border-radius: 5px;
+    appearance: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 0;
 }
 
-h4 {
-    color: white
+.team-share-button:hover {
+    background: #1d49aa;
 }
 
-h5 {
-    color: white
-}
-
-h6 {
-    color: white
-}
-
-i {
-    color: white
-}
-
-body {
-    color: white
-}
-
-.footer-corner {
-    border-top-left-radius: 50px;
+.team-share-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
 }

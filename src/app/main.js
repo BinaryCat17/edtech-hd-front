@@ -11,7 +11,7 @@ export default function Main() {
         <Provider store={store}>
             <BrowserRouter>
                 <Template>
-                    <Router />
+                    <Router className="border"/>
                 </Template>
             </BrowserRouter>
         </Provider>
