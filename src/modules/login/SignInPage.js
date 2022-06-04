@@ -1,11 +1,10 @@
 import React, { useState } from "react"
 import { useSelector, useDispatch } from "react-redux";
 import { FormGroup, Input, Label } from "reactstrap"
-import InputField from "core/input/Field"
+import InputField from "core/input/InputField"
 import { authorize, command, selectCommand, selectLogin } from "core/commands/commandsSlice";
 import LoginTemplate from "./LoginTemplate"
-
-
+import { Link } from "react-router-dom";
 
 export default function SignInPage(_) {
     const [username, setUsername] = useState("")
@@ -16,19 +15,23 @@ export default function SignInPage(_) {
         dispatch(authorize(username, password))
     }
 
+    selectLogin
+
     return (
-        <LoginTemplate>
-            <p className="text-title mt-3 mb-1">Sign in to your account</p>
-            <p className="text-normal mr-1">Or <a className="link-normal">sign up if you don`t have account</a></p>
+        <LoginTemplate size="4">
+            <p className="text-title mt-3 mb-1">Войти в ваш аккаунт</p>
+            <Link to="/signup">
+                <p className="text-normal mr-1">Или <i className="link-normal">зарегистрируйтесь, если у вас еще нет аккаунта.</i></p>
+            </Link>
             <InputField className="mx-4 mt-3"
-                placeholder="Username"
+                placeholder="Логин"
                 name="username"
                 type="text"
                 autoComplete="username"
                 onBlur={setUsername}
             />
             <InputField className="mx-4 mb-3"
-                placeholder="Password"
+                placeholder="Пароль"
                 name="password"
                 type="password"
                 autoComplete="new-password"
@@ -37,14 +40,16 @@ export default function SignInPage(_) {
             <div className="d-flex flex-row mx-4">
                 <FormGroup check className="mr-auto">
                     <Input id="checkbox2" type="checkbox" />
-                    <Label check className="text-normal">Remeber me</Label>
+                    <Label check className="text-normal">Запомнить меня</Label>
                 </FormGroup>
-                <p className="link-normal">Forgot password</p>
+                <p className="link-normal">Забыли пароль</p>
             </div>
 
-            <div onClick={loginHandler} className="login-button mx-4 mb-4 d-flex flex-row pt-2 m-0">
-                <img src="/assets/logo/lock.png" className="ml-1 mr-5" width={30} height={25} />
-                <p className="text-normal-light mt-1 mb-2 ml-5 mr-3 text-center col-sm-3 col-md-4 col-xl-6 col-xxl-6">Sign In</p>
+            <div onClick={loginHandler} className="login-button mx-4 mb-4 d-flex flex-row pt-2 m-0"  style={{height: "40px"}}>
+                <img src="/assets/logo/lock.png" className="ml-1 mr-5" width={30} height={25}/>
+                <div className="col-10" style={{ position: "absolute" }}>
+                    <p className="text-normal-light ml-4 mt-1">Войти</p>
+                </div>
             </div>
         </LoginTemplate>)
 }

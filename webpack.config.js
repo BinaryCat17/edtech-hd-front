@@ -1,5 +1,3 @@
-// Generated using webpack-cli https://github.com/webpack/webpack-cli
-
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -18,13 +16,17 @@ const config = {
     open: true,
     host: "192.168.88.250",
     port: 8081,
+    headers: {
+      'Cache-Control': 'no-store',
+    },
     onAfterSetupMiddleware: function (devServer) {
       devServer.app.use("/api",
         createProxyMiddleware({
           target: "http://192.168.88.250:8082",
           changeOrigin: true
         }))
-    }
+    },
+    hot: true
   },
   plugins: [
     new HtmlWebpackPlugin({

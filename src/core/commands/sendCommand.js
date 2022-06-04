@@ -1,6 +1,6 @@
 const base64 = require('base-64');
 
-export function sendCommand(method, command, args, handler) {
+export function sendCommand(method, command, args, handler, payload = null) {
     let url = 'http://чёрныйящик.рф/api/' + command;
     args.forEach(arg => {
         url += "/" + arg
@@ -12,14 +12,17 @@ export function sendCommand(method, command, args, handler) {
 
     return fetch(url, {
         method: method,
-        headers: headers
+        headers: headers,
+        body: payload
     }).then(response => {
-        if (response.status === 200) {
-            response.json().then(json => handler(json))
-        } else {
-            response.text().then(data => {
-                handler({ error: data })
-            })
+        if (method == "GET") {
+            if (response.status === 200) {
+                response.json().then(json => handler(json))
+            } else {
+                response.text().then(data => {
+                    handler({ error: data })
+                })
+            }
         }
     })
 }
@@ -34,8 +37,9 @@ export function sendLogin(username, password, handler) {
         method: "GET",
         headers: headers
     }).then(response => {
-        window.location.href = response.url
         if (response.status === 200) {
+
+            window.location.href = response.url
             response.text().then(json => {
                 if (json.length > 0 && json.at(0) !== '<') {
                     handler(JSON.parse(json))
